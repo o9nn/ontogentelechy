@@ -32,8 +32,9 @@ Usage:
     score = fitness.evaluate(individual)
 """
 
-__version__ = "0.3.0"
+__version__ = "0.5.0"
 
+from .adapters import NumpyArrayEntity, RLAgentEntity, create_training_observer
 from .attractor import AttractorLandscape, Basin, Repulsor
 from .core import (
     ActualizationMetrics,
@@ -55,6 +56,26 @@ from .evolution import (
 from .fitness import (
     MultiTelosFitness,
     TeleologicalFitness,
+)
+from .llm_teloi import (
+    create_factual_coherence_telos,
+    create_instruction_following_telos,
+    create_llm_telos,
+    create_safety_alignment_telos,
+    create_stylistic_consistency_telos,
+    list_llm_teloi,
+)
+from .meta import (
+    AutopoieticSystem,
+    SwarmMetrics,
+    SwarmTeleology,
+    TelosDiscoveryConfig,
+    TelosHierarchy,
+    TelosNode,
+    crossover_teloi,
+    discover_telos,
+    evolve_teloi,
+    mutate_telos,
 )
 from .protocols import (
     AtomSpace,
@@ -100,4 +121,26 @@ __all__ = [
     "TelosPopulation",
     "IslandModel",
     "ParetoEvolution",
+    # Adapters (Phase 4)
+    "NumpyArrayEntity",
+    "RLAgentEntity",
+    "create_training_observer",
+    # LLM Teloi (Phase 4)
+    "create_instruction_following_telos",
+    "create_factual_coherence_telos",
+    "create_stylistic_consistency_telos",
+    "create_safety_alignment_telos",
+    "create_llm_telos",
+    "list_llm_teloi",
+    # Meta-Teleology (Phase 5)
+    "TelosDiscoveryConfig",
+    "discover_telos",
+    "TelosNode",
+    "TelosHierarchy",
+    "mutate_telos",
+    "crossover_teloi",
+    "evolve_teloi",
+    "AutopoieticSystem",
+    "SwarmMetrics",
+    "SwarmTeleology",
 ]
