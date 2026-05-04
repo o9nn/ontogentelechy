@@ -32,8 +32,9 @@ Usage:
     score = fitness.evaluate(individual)
 """
 
-__version__ = "0.2.0"
+__version__ = "0.3.0"
 
+from .attractor import AttractorLandscape, Basin, Repulsor
 from .core import (
     ActualizationMetrics,
     ActualizationPhase,
@@ -44,6 +45,13 @@ from .core import (
 )
 from .emergence import EmergenceDetector
 from .entity import SimpleEntity, SimpleGene
+from .evolution import (
+    EvoIndividual,
+    IslandModel,
+    OntogeneticStage,
+    ParetoEvolution,
+    TelosPopulation,
+)
 from .fitness import (
     MultiTelosFitness,
     TeleologicalFitness,
@@ -82,4 +90,14 @@ __all__ = [
     "SimpleGene",
     # Emergence detection
     "EmergenceDetector",
+    # Attractor dynamics
+    "Basin",
+    "Repulsor",
+    "AttractorLandscape",
+    # Evolution engine
+    "OntogeneticStage",
+    "EvoIndividual",
+    "TelosPopulation",
+    "IslandModel",
+    "ParetoEvolution",
 ]
