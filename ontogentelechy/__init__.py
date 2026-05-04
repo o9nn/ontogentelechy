@@ -13,8 +13,8 @@ Key Concepts:
 - Emergence: New properties arising from development
 
 Usage:
-    from cogprime.telos import Telos, Criterion, TeleologicalFitness
-    
+    from ontogentelechy import Telos, Criterion, TeleologicalFitness
+
     # Define a telos
     telos = Telos(
         name="semantic_coherence",
@@ -26,28 +26,40 @@ Usage:
         ],
         attractor_state={'weights': [0.8, 0.7, 0.9]}
     )
-    
+
     # Use in fitness evaluation
     fitness = TeleologicalFitness(atomspace, telos)
     score = fitness.evaluate(individual)
 """
 
+__version__ = "0.2.0"
+
 from .core import (
-    Telos,
-    Criterion,
-    ActualizationPhase,
     ActualizationMetrics,
+    ActualizationPhase,
     ActualizationTracker,
+    Criterion,
     DevelopmentalAttractor,
+    Telos,
+)
+from .emergence import EmergenceDetector
+from .entity import SimpleEntity, SimpleGene
+from .fitness import (
+    MultiTelosFitness,
+    TeleologicalFitness,
+)
+from .protocols import (
+    AtomSpace,
+    DevelopableEntity,
+    FitnessFunction,
+    Gene,
+    Individual,
+    OntogeneticState,
 )
 
-# Fitness functions require full package installation
-# from .fitness import (
-#     TeleologicalFitness,
-#     MultiTelosFitness,
-# )
-
 __all__ = [
+    # Version
+    "__version__",
     # Core classes
     "Telos",
     "Criterion",
@@ -55,7 +67,19 @@ __all__ = [
     "ActualizationMetrics",
     "ActualizationTracker",
     "DevelopmentalAttractor",
-    # Fitness functions (require full package installation)
-    # "TeleologicalFitness",
-    # "MultiTelosFitness",
+    # Fitness functions
+    "TeleologicalFitness",
+    "MultiTelosFitness",
+    # Protocol classes
+    "FitnessFunction",
+    "Individual",
+    "AtomSpace",
+    "Gene",
+    "OntogeneticState",
+    "DevelopableEntity",
+    # Entity implementations
+    "SimpleEntity",
+    "SimpleGene",
+    # Emergence detection
+    "EmergenceDetector",
 ]
