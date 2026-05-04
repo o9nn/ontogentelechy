@@ -294,6 +294,7 @@ class MultiTelosFitness(FitnessFunction):
                 best_telos = telos
 
         if best_telos is None:
-            # Fall back to first telos if none scored above 0
+            # No telos scored above 0; fall back to first telos and evaluate it properly
             best_telos = self.teloi[0][0]
+            best_score = self.fitness_functions[0].evaluate(individual)
         return best_telos, best_score
