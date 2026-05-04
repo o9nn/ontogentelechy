@@ -32,7 +32,7 @@ Usage:
     score = fitness.evaluate(individual)
 """
 
-__version__ = "0.5.0"
+__version__ = "1.0.0"
 
 from .adapters import NumpyArrayEntity, RLAgentEntity, create_training_observer
 from .attractor import AttractorLandscape, Basin, Repulsor
@@ -143,4 +143,14 @@ __all__ = [
     "AutopoieticSystem",
     "SwarmMetrics",
     "SwarmTeleology",
+    # Benchmarks (Phase 6)
+    "BenchmarkResult",
+    "CoherentClusterBenchmark",
+    "PhaseSeparationBenchmark",
+    "EmergenceTrackingBenchmark",
+    "run_benchmark",
+    "list_benchmarks",
+    # Registry (Phase 6)
+    "registry",
+    "TelosRegistry",
 ]
